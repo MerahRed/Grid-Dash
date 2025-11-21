@@ -1,0 +1,168 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvnbsnujmhavh"]
+
+[ext_resource type="Script" uid="uid://d2c33aw6ruopr" path="res://scripts/obs.gd" id="1_x3hdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
+size = Vector2(54, 116)
+
+[node name="obs" type="Node2D"]
+script = ExtResource("1_x3hdu")
+
+[node name="Warning" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 1552.0
+offset_bottom = 64.0
+color = Color(1, 0, 0, 0.13725491)
+
+[node name="Polygon2D" type="Polygon2D" parent="Warning"]
+position = Vector2(37.714287, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Warning"]
+position = Vector2(104, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Warning"]
+position = Vector2(168, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Warning"]
+position = Vector2(232, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Warning"]
+position = Vector2(296, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Warning"]
+position = Vector2(360, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Warning"]
+position = Vector2(424, 8)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Warning"]
+position = Vector2(485.7143, 10.285713)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Warning"]
+position = Vector2(552, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Warning"]
+position = Vector2(616, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Warning"]
+position = Vector2(680, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Warning"]
+position = Vector2(744, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Warning"]
+position = Vector2(808, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Warning"]
+position = Vector2(872, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D15" type="Polygon2D" parent="Warning"]
+position = Vector2(933.7143, 10.285713)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D16" type="Polygon2D" parent="Warning"]
+position = Vector2(1000, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D17" type="Polygon2D" parent="Warning"]
+position = Vector2(1064, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D18" type="Polygon2D" parent="Warning"]
+position = Vector2(1128, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D19" type="Polygon2D" parent="Warning"]
+position = Vector2(1192, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Warning"]
+position = Vector2(1256, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D21" type="Polygon2D" parent="Warning"]
+position = Vector2(1320, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D22" type="Polygon2D" parent="Warning"]
+position = Vector2(1381.7142, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D23" type="Polygon2D" parent="Warning"]
+position = Vector2(1445.7142, 9.142857)
+scale = Vector2(0.71428573, 0.85714287)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = 64.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_f50pn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

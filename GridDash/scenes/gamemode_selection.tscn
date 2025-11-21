@@ -1,0 +1,851 @@
+[gd_scene load_steps=18 format=3 uid="uid://b5d3w17t0xigc"]
+
+[ext_resource type="Texture2D" uid="uid://eixgdb60xktb" path="res://images/revolver.png" id="1_g2vc0"]
+[ext_resource type="Script" uid="uid://raqooyijjwgt" path="res://scripts/gamemode_selection.gd" id="1_pdbe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06t4h"]
+size = Vector2(128, 324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vrkn"]
+size = Vector2(139, 335)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu7sn"]
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
+_data = {
+&"RESET": SubResource("Animation_8ln24"),
+&"move": SubResource("Animation_wu84c")
+}
+
+[sub_resource type="Animation" id="Animation_06t4h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Normal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Normal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Transision:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Transision/Transision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-679, -3000)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shooter:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shooter:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shooter/Revolver:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.1192281]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Shooter/Revolver2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.217061]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Shooter/Revolver3:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.958057]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Shooter/Revolver:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.20654911, 0.20654911)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Shooter/Revolver2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.207, 0.207)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Shooter/Revolver3:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.207, 0.207)]
+}
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Normal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.17075509, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Normal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fu7sn"]
+resource_name = "out play"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Normal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.16493855, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Normal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_s1fq4"]
+resource_name = "out shooter"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shooter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.19614604, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shooter:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+resource_name = "play"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transision:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transision/Transision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8993718, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-679, -2747), Vector2(-679, -571)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7vrkn"]
+resource_name = "select play"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Normal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.17075509, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Normal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g2vc0"]
+resource_name = "select shooter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shooter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.14358728, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shooter:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shooter/Revolver:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.56666666, 1),
+"transitions": PackedFloat32Array(0.3535533, 1),
+"update": 0,
+"values": [0.0, 2.1192281]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shooter/Revolver2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.56666666, 1),
+"transitions": PackedFloat32Array(0.22531268, 1),
+"update": 0,
+"values": [3.141592653589793, 4.217061]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shooter/Revolver3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.56666666, 1),
+"transitions": PackedFloat32Array(0.34151012, 1),
+"update": 0,
+"values": [3.141592653589793, 4.958057]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shooter/Revolver:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.19, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.20654911, 0.20654911)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shooter/Revolver2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.19, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-0.207, 0.207)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Shooter/Revolver3:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.19, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-0.207, 0.207)]
+}
+
+[sub_resource type="Animation" id="Animation_pdbe1"]
+resource_name = "transision"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transision:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transision/Transision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333338, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-679, -571), Vector2(-679, -3000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fu7sn"]
+_data = {
+&"RESET": SubResource("Animation_06t4h"),
+&"idle": SubResource("Animation_jix8l"),
+&"out play": SubResource("Animation_fu7sn"),
+&"out shooter": SubResource("Animation_s1fq4"),
+&"play": SubResource("Animation_glbon"),
+&"select play": SubResource("Animation_7vrkn"),
+&"select shooter": SubResource("Animation_g2vc0"),
+&"transision": SubResource("Animation_pdbe1")
+}
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="Normal" type="Node2D" parent="."]
+visible = false
+position = Vector2(361.00003, 48)
+
+[node name="Label" type="Label" parent="Normal"]
+offset_left = -167.77783
+offset_top = -239.99998
+offset_right = 258.22217
+offset_bottom = 37.000015
+scale = Vector2(0.8672636, 0.8437685)
+theme_override_font_sizes/font_size = 100
+text = "Normal
+(endless)"
+horizontal_alignment = 1
+
+[node name="grid" type="Node2D" parent="Normal"]
+position = Vector2(-468.88895, -76.66667)
+
+[node name="ColorRect" type="ColorRect" parent="Normal/grid"]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 448.0
+color = Color(1, 1, 1, 0.043137256)
+
+[node name="ColorRect2" type="ColorRect" parent="Normal/grid"]
+offset_left = 392.0
+offset_top = 264.0
+offset_right = 440.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect3" type="ColorRect" parent="Normal/grid"]
+offset_left = 456.0
+offset_top = 264.0
+offset_right = 504.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect4" type="ColorRect" parent="Normal/grid"]
+offset_left = 520.0
+offset_top = 264.0
+offset_right = 568.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect5" type="ColorRect" parent="Normal/grid"]
+offset_left = 392.0
+offset_top = 328.0
+offset_right = 440.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect6" type="ColorRect" parent="Normal/grid"]
+offset_left = 456.0
+offset_top = 328.0
+offset_right = 504.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect7" type="ColorRect" parent="Normal/grid"]
+offset_left = 520.0
+offset_top = 328.0
+offset_right = 568.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect8" type="ColorRect" parent="Normal/grid"]
+offset_left = 392.0
+offset_top = 392.0
+offset_right = 440.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect9" type="ColorRect" parent="Normal/grid"]
+offset_left = 456.0
+offset_top = 392.0
+offset_right = 504.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect10" type="ColorRect" parent="Normal/grid"]
+offset_left = 520.0
+offset_top = 392.0
+offset_right = 568.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="Shooter" type="Node2D" parent="."]
+position = Vector2(804, 48)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Label" type="Label" parent="Shooter"]
+offset_left = -167.77783
+offset_top = -122.99999
+offset_right = 258.22217
+offset_bottom = 15.336388
+scale = Vector2(0.8672636, 0.8437685)
+theme_override_font_sizes/font_size = 100
+text = "Shooter"
+horizontal_alignment = 1
+
+[node name="grid" type="Node2D" parent="Shooter"]
+position = Vector2(-468.88895, -76.66667)
+
+[node name="ColorRect" type="ColorRect" parent="Shooter/grid"]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 448.0
+color = Color(1, 1, 1, 0.043137256)
+
+[node name="ColorRect2" type="ColorRect" parent="Shooter/grid"]
+offset_left = 392.0
+offset_top = 264.0
+offset_right = 440.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect3" type="ColorRect" parent="Shooter/grid"]
+offset_left = 456.0
+offset_top = 264.0
+offset_right = 504.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="Shooter/grid"]
+offset_left = 520.0
+offset_top = 264.0
+offset_right = 568.0
+offset_bottom = 312.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="Shooter/grid"]
+offset_left = 392.0
+offset_top = 328.0
+offset_right = 440.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect6" type="ColorRect" parent="Shooter/grid"]
+offset_left = 456.0
+offset_top = 328.0
+offset_right = 504.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="Shooter/grid"]
+offset_left = 520.0
+offset_top = 328.0
+offset_right = 568.0
+offset_bottom = 376.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="Shooter/grid"]
+offset_left = 392.0
+offset_top = 392.0
+offset_right = 440.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+
+[node name="ColorRect9" type="ColorRect" parent="Shooter/grid"]
+offset_left = 456.0
+offset_top = 392.0
+offset_right = 504.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect10" type="ColorRect" parent="Shooter/grid"]
+offset_left = 520.0
+offset_top = 392.0
+offset_right = 568.0
+offset_bottom = 440.0
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="Revolver" type="Sprite2D" parent="Shooter"]
+position = Vector2(-228.99994, 143.00003)
+rotation = 2.1192281
+scale = Vector2(0.20654911, 0.20654911)
+texture = ExtResource("1_g2vc0")
+
+[node name="Revolver2" type="Sprite2D" parent="Shooter"]
+position = Vector2(253, 144)
+rotation = 4.217061
+scale = Vector2(-0.207, 0.207)
+texture = ExtResource("1_g2vc0")
+
+[node name="Revolver3" type="Sprite2D" parent="Shooter"]
+position = Vector2(240, 377)
+rotation = 4.958057
+scale = Vector2(-0.207, 0.207)
+texture = ExtResource("1_g2vc0")
+
+[node name="play" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 470.0
+offset_right = 506.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 70
+text = "Normal
+"
+
+[node name="play" type="Area2D" parent="play"]
+position = Vector2(25, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="play/play"]
+position = Vector2(101, -57)
+shape = SubResource("RectangleShape2D_06t4h")
+
+[node name="Shooter2" type="Button" parent="."]
+offset_left = 667.0
+offset_top = 469.0
+offset_right = 946.0
+offset_bottom = 614.0
+theme_override_font_sizes/font_size = 70
+text = "Boss
+"
+
+[node name="shooter" type="Area2D" parent="Shooter2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shooter2/shooter"]
+position = Vector2(143.5, -48.5)
+shape = SubResource("RectangleShape2D_7vrkn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(371, 761)
+script = ExtResource("1_pdbe1")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("CircleShape2D_fu7sn")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-3, -324)
+position_smoothing_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ln24")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fu7sn")
+}
+autoplay = "transision"
+
+[node name="Transision" type="Node2D" parent="."]
+
+[node name="Transision" type="ColorRect" parent="Transision"]
+z_index = 2
+offset_left = -679.0
+offset_top = -3000.0
+offset_right = 1377.0
+offset_bottom = -759.0
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+
+[node name="grids" type="Node2D" parent="."]
+
+[node name="grid2" type="Node2D" parent="."]
+position = Vector2(371, 762)
+scale = Vector2(0.9, 0.9)
+
+[node name="ColorRect" type="ColorRect" parent="grid2"]
+offset_left = -38.888893
+offset_top = -36.66667
+offset_right = 528.8889
+offset_bottom = 33.33339
+color = Color(1, 1, 1, 0.043137256)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="grid2"]
+z_index = -1
+offset_left = -38.888893
+offset_top = -280.00006
+offset_right = 37.777794
+offset_bottom = -36.666626
+color = Color(1, 1, 1, 0.043137256)
+
+[node name="ColorRect3" type="ColorRect" parent="grid2"]
+z_index = -1
+offset_left = 452.22226
+offset_top = -280.0
+offset_right = 528.8889
+offset_bottom = -37.77777
+color = Color(1, 1, 1, 0.043137256)
+
+[node name="ColorRect6" type="ColorRect" parent="grid2"]
+offset_left = -23.555553
+offset_top = -22.444445
+offset_right = 24.444447
+offset_bottom = 25.555555
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="grid3" type="Node2D" parent="."]
+position = Vector2(591, 762)
+scale = Vector2(0.9, 0.9)
+
+[node name="ColorRect6" type="ColorRect" parent="grid3"]
+offset_left = -23.555553
+offset_top = -22.444445
+offset_right = 24.444447
+offset_bottom = 25.555555
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="grid3"]
+offset_left = -38.00001
+offset_top = -37.777756
+offset_right = 38.888905
+offset_bottom = 40.88887
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect9" type="ColorRect" parent="grid3"]
+offset_left = -283.33334
+offset_top = -36.666645
+offset_right = -206.44443
+offset_bottom = 41.99998
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect8" type="ColorRect" parent="grid3"]
+offset_left = 206.66667
+offset_top = -37.777756
+offset_right = 283.5556
+offset_bottom = 40.88887
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[node name="grid4" type="Node2D" parent="."]
+position = Vector2(811, 762)
+scale = Vector2(0.9, 0.9)
+
+[node name="ColorRect6" type="ColorRect" parent="grid4"]
+offset_left = -23.555553
+offset_top = -22.444445
+offset_right = 24.444447
+offset_bottom = 25.555555
+color = Color(0, 0, 0, 0.050980393)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CharacterBody2D" method="_on_animation_player_animation_finished"]
