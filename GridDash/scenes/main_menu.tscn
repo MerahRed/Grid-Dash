@@ -1,14 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://8k5tmjirkwsj"]
+[gd_scene load_steps=18 format=3 uid="uid://8k5tmjirkwsj"]
 
 [ext_resource type="Script" uid="uid://crcx6mavpcbas" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://b8tt2gtpbpu03" path="res://images/soul.png" id="2_ekxnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06t4h"]
 size = Vector2(128, 324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vrkn"]
-size = Vector2(139, 56)
+size = Vector2(139, 334)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu7sn"]
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wu84c"]
 resource_name = "move"
@@ -24,21 +40,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.6, 0.6), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8ln24"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
@@ -134,6 +135,48 @@ tracks/6/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_glbon"]
+resource_name = "change scene"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transision:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transision/Transision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8993718, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-679, -2747), Vector2(-679, -571)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterBody2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_jix8l"]
 resource_name = "idle play"
 length = 0.5
@@ -219,48 +262,6 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_glbon"]
-resource_name = "play"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transision:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Transision/Transision:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.8993718, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-679, -2747), Vector2(-679, -571)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterBody2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.9666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"change_scene"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_7vrkn"]
 resource_name = "select play"
 length = 0.6
@@ -317,15 +318,44 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_bqqt6"]
+resource_name = "transision"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transision:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transision/Transision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8993718),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-679, -571), Vector2(-679, -2747)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fu7sn"]
 _data = {
 &"RESET": SubResource("Animation_06t4h"),
+&"change scene": SubResource("Animation_glbon"),
 &"idle play": SubResource("Animation_jix8l"),
 &"out play": SubResource("Animation_fu7sn"),
 &"out shop": SubResource("Animation_ekxnf"),
-&"play": SubResource("Animation_glbon"),
 &"select play": SubResource("Animation_7vrkn"),
-&"select shop": SubResource("Animation_l6cm7")
+&"select shop": SubResource("Animation_l6cm7"),
+&"transision": SubResource("Animation_bqqt6")
 }
 
 [node name="Main Menu" type="Node2D"]
@@ -491,7 +521,7 @@ text = "Shop
 [node name="shop" type="Area2D" parent="shop"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shop/shop"]
-position = Vector2(143.5, 91)
+position = Vector2(143.5, -48)
 shape = SubResource("RectangleShape2D_7vrkn")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -505,25 +535,35 @@ shape = SubResource("CircleShape2D_fu7sn")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-3, -324)
+zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
-
-[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
-offset_left = -20.0
-offset_top = -19.0
-offset_right = 20.0
-offset_bottom = 21.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_8ln24")
 }
 
+[node name="characters" type="Node2D" parent="CharacterBody2D"]
+
+[node name="default" type="ColorRect" parent="CharacterBody2D/characters"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Soul" type="Sprite2D" parent="CharacterBody2D/characters"]
+visible = false
+scale = Vector2(0.2266018, 0.2266018)
+texture = ExtResource("2_ekxnf")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_fu7sn")
 }
+autoplay = "transision"
 
 [node name="Transision" type="Node2D" parent="."]
+z_index = 2
 
 [node name="Transision" type="ColorRect" parent="Transision"]
 offset_left = -679.0
@@ -611,6 +651,23 @@ offset_right = 24.444447
 offset_bottom = 25.555555
 color = Color(0, 0, 0, 0.050980393)
 
+[node name="Button" type="Button" parent="."]
+offset_left = 76.0
+offset_top = 812.0
+offset_right = 124.0
+offset_bottom = 887.0
+text = "reset
+data"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 138.0
+offset_top = 814.0
+offset_right = 200.0
+offset_bottom = 889.0
+text = "+30$"
+
 [connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CharacterBody2D" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Button" to="CharacterBody2D" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="CharacterBody2D" method="_on_button_2_pressed"]

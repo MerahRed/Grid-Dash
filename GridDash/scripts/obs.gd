@@ -9,9 +9,6 @@ var target = Vector2()
 @onready var gameover: Node2D = $"../../over screen"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
-func _ready() -> void:
-	print(SPEED)
-
 func _physics_process(delta: float) -> void:
 	position += target * Vector2(SPEED,SPEED)
 

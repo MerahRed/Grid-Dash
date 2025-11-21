@@ -11,11 +11,20 @@ var swiping := false
 var start_pos := Vector2()
 var cur_pos := Vector2()
 
+var characters = {}
+
+var current_character = 0
+
+#0- default
+#1- soul
+#2- orb
+
 # For smooth movement
 var target_position := Vector2()
 
 func _ready() -> void:
 	target_position = position
+
 
 
 func _physics_process(delta: float) -> void:
@@ -25,6 +34,9 @@ func _physics_process(delta: float) -> void:
 
 	# Smoothly interpolate toward the target position
 	position = position.lerp(target_position, 20.0 * delta)
+
+	handle_characters()
+
 
 
 func handle_input() -> void:
@@ -84,3 +96,13 @@ func handle_limit() -> void:
 		target_position.y = 224 + 64
 	elif target_position.y >= 480:
 		target_position.y = 480 - 64
+
+
+
+func handle_characters():
+	if current_character == 0:
+		$characters/default.visible = true
+		$characters/Soul.visible = false
+	elif current_character == 1: 
+		$characters/default.visible = false
+		$characters/Soul.visible = true

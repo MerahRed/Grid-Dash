@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckhmejoa1q4tw"]
+[gd_scene load_steps=8 format=3 uid="uid://ckhmejoa1q4tw"]
 
 [ext_resource type="Script" uid="uid://ka50ogf31uqp" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://b8tt2gtpbpu03" path="res://images/soul.png" id="2_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 8.0
@@ -52,12 +53,6 @@ script = ExtResource("1_4flbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_onrkg")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -67,3 +62,16 @@ shape = SubResource("CircleShape2D_4flbx")
 libraries = {
 &"": SubResource("AnimationLibrary_i3pqv")
 }
+
+[node name="characters" type="Node2D" parent="."]
+
+[node name="default" type="ColorRect" parent="characters"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Soul" type="Sprite2D" parent="characters"]
+visible = false
+scale = Vector2(0.2266018, 0.2266018)
+texture = ExtResource("2_g2els")

@@ -13,8 +13,9 @@ var target_position := Vector2()
 
 @onready var current: ColorRect = $current
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var money: Label = $"../CanvasLayer/money"
 
-var play = preload("res://scenes/game.tscn")
+var main_menu = preload("res://scenes/main_menu.tscn")
 
 var now = 0
 
@@ -35,11 +36,10 @@ var current_character = 0
 var coin = 0
 var highscore = 0
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	target_position = position
 	load_save()
+	target_position = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,7 +47,8 @@ func _process(delta: float) -> void:
 	handle_swipe()
 	handle_input()
 	position = position.lerp(target_position, 20.0 * delta)
-	#display character
+	money.text = "$ " + str(coin)
+	#characters display
 	handle_characters()
 
 
@@ -79,6 +80,8 @@ func handle_swipe() -> void:
 					target_position.y -= SPEED
 					if now == 1:
 						animation_player.play("play")
+					elif now != 0:
+						change_scene()
 
 
 
@@ -88,6 +91,8 @@ func handle_input() -> void:
 		target_position.y -= SPEED
 		if now == 1:
 			animation_player.play("play")
+		elif now != 0:
+			change_scene()
 	elif Input.is_action_just_pressed("ui_down"):
 		$AnimationPlayer.play("move")
 		target_position.y += SPEED
@@ -100,32 +105,63 @@ func handle_input() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "play":
+	if area.name == "back":
 		animation_player.play("select play")
 		now = 1
-	if area.name == "shooter":
-		animation_player.play("select shooter")
+	if area.name == "default":
 		now = 2
+	if area.name == "heart":
+		now = 3
 
 func change_scene():
+	var tween = create_tween()
 	if now == 1:
-		get_tree().change_scene_to_packed(play)
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	if now == 2:
+		current_character = 0
+		tween.tween_property($"../default/default", "position", Vector2($"../default/default".position.x, $"../default/default".position.y - 100), 0.2)
+		tween.tween_property($"../default/default", "position", Vector2($"../default/default".position.x, $"../default/default".position.y), 0.2)
+		save()
+	if now == 3:
+		if characters["soul"] == false and coin >= 30:
+			coin -= 30
+			characters["soul"] = true
+			tween.tween_property($"../Shop/heart", "position", Vector2($"../Shop/heart".position.x, $"../Shop/heart".position.y - 100), 0.2)
+			tween.tween_property($"../Shop/heart", "position", Vector2($"../Shop/heart".position.x, $"../Shop/heart".position.y), 0.2)
+			current_character = 1
+			save()
+		elif characters["soul"] == true:
+			tween.tween_property($"../Shop/heart", "position", Vector2($"../Shop/heart".position.x, $"../Shop/heart".position.y - 100), 0.2)
+			tween.tween_property($"../Shop/heart", "position", Vector2($"../Shop/heart".position.x, $"../Shop/heart".position.y), 0.2)
+			current_character = 1
+			save()
+
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.name == "play":
+	if area.name == "back":
 		if now == 1:
 			now = 0
 			animation_player.play("out play")
-	if area.name == "shooter":
+	if area.name == "default":
 		if now == 2:
 			now = 0
-			animation_player.play("out shooter")
+	if area.name == "heart":
+		if now == 3:
+			now = 0
+
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "select play":
 		animation_player.play("idle")
+
+func save():
+	game_data = { "coin": coin,"highscore": highscore, "characters": characters,  "current_character": current_character}
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	if file:
+		file.store_string(var_to_str(game_data))
+		file.close()
 
 func load_save():
 	if FileAccess.file_exists(save_path):

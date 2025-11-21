@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxqrxeduu8on2"]
+[gd_scene load_steps=9 format=3 uid="uid://bxqrxeduu8on2"]
 
 [ext_resource type="PackedScene" uid="uid://ckhmejoa1q4tw" path="res://scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dmeuf5jfe0lds" path="res://scripts/game.gd" id="1_feb5d"]
@@ -53,6 +53,48 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "back"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transision:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(83, -108), Vector2(83, 2121)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transision:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"back_to_menu"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lnu2h"]
@@ -141,6 +183,7 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7jktm"]
 _data = {
 &"RESET": SubResource("Animation_fc0e3"),
+&"back": SubResource("Animation_lbhrr"),
 &"game over": SubResource("Animation_lnu2h"),
 &"start": SubResource("Animation_feb5d")
 }
@@ -263,17 +306,9 @@ metadata/_edit_use_anchors_ = true
 [node name="coin_Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="reset data" type="Button" parent="."]
-offset_left = 133.0
-offset_top = 834.0
-offset_right = 288.0
-offset_bottom = 884.0
-theme_override_font_sizes/font_size = 30
-text = "reset data"
-
 [node name="Transision" type="Node2D" parent="."]
 visible = false
-z_index = 2
+z_index = 4
 position = Vector2(83, 2121)
 
 [node name="Transision" type="ColorRect" parent="Transision"]
@@ -339,6 +374,5 @@ text = "Try Again"
 
 [connection signal="timeout" from="obs_Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="coin_Timer" to="spawner" method="_on_coin_timer_timeout"]
-[connection signal="pressed" from="reset data" to="." method="_on_reset_data_pressed"]
 [connection signal="pressed" from="over screen/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="over screen/Try Again" to="." method="_on_try_again_pressed"]
