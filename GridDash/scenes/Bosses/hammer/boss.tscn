@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://6b0i6vx8xxf3"]
+[gd_scene load_steps=10 format=3 uid="uid://dbn0yiqjdn2u1"]
 
-[ext_resource type="Script" uid="uid://dmeuf5jfe0lds" path="res://scripts/game.gd" id="1_s6yb0"]
-[ext_resource type="PackedScene" uid="uid://ckhmejoa1q4tw" path="res://scenes/player.tscn" id="2_qr6m0"]
-[ext_resource type="Script" uid="uid://bmshkoq47b8y1" path="res://scenes/Bosses/hammer/spawner.gd" id="3_qr6m0"]
-[ext_resource type="Texture2D" uid="uid://dyludn880arir" path="res://images/Grid.png" id="4_qr6m0"]
+[ext_resource type="Script" uid="uid://c1ghof488bs0v" path="res://scenes/Bosses/hammer/boss.gd" id="1_qr6m0"]
+[ext_resource type="PackedScene" uid="uid://ckhmejoa1q4tw" path="res://scenes/player.tscn" id="2_n7r8y"]
+[ext_resource type="Script" uid="uid://bmshkoq47b8y1" path="res://scenes/Bosses/hammer/spawner.gd" id="3_10ykn"]
+[ext_resource type="Texture2D" uid="uid://dyludn880arir" path="res://images/Grid.png" id="4_1trvp"]
 
 [sub_resource type="Animation" id="Animation_fc0e3"]
 length = 0.001
@@ -189,20 +189,21 @@ _data = {
 &"start": SubResource("Animation_feb5d")
 }
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_s6yb0")
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_qr6m0")
 
-[node name="player" parent="." instance=ExtResource("2_qr6m0")]
+[node name="player" parent="." instance=ExtResource("2_n7r8y")]
 position = Vector2(480, 352)
 
 [node name="spawner" type="Node2D" parent="."]
-script = ExtResource("3_qr6m0")
+script = ExtResource("3_10ykn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(480, 352)
 zoom = Vector2(0.9, 0.9)
 
 [node name="obs_Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="ShowWarning" type="CheckButton" parent="."]
 offset_left = 132.0
@@ -234,6 +235,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="coin_Timer" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
 
 [node name="Transision" type="Node2D" parent="."]
 visible = false
@@ -305,7 +307,7 @@ text = "Try Again"
 z_index = -3
 position = Vector2(480, 352)
 scale = Vector2(0.3083333, 0.31111115)
-texture = ExtResource("4_qr6m0")
+texture = ExtResource("4_1trvp")
 
 [node name="ColorRect" type="ColorRect" parent="Grid"]
 offset_left = -314.5946
@@ -314,7 +316,5 @@ offset_right = 314.5946
 offset_bottom = 311.78564
 color = Color(1, 1, 1, 0.11764706)
 
-[connection signal="timeout" from="obs_Timer" to="spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="obs_Timer" to="spawner" method="_on_obs_timer_timeout"]
 [connection signal="timeout" from="coin_Timer" to="spawner" method="_on_coin_timer_timeout"]
-[connection signal="pressed" from="over screen/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="over screen/Try Again" to="." method="_on_try_again_pressed"]

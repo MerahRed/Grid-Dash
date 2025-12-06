@@ -24,15 +24,19 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_QUART)
+	$Spin.pitch_scale =  randf_range(0.9,1.2)
+	$Spin.play()
 	tween.tween_property(self,"rotation_degrees",rotate,0.6)
 	tween.connect("finished", Callable(self, "_on_tween_finished"))
 
 func _on_tween_finished():
-	if  rotate < -90 or rotate > 90:
+	if  scale.x == -1:
 		SPEED = -500
 	else:
 		SPEED = 500
 	$Sprite/Warning.visible = false
+	$Shot.pitch_scale = randf_range(0.9,1.3)
+	$Shot.play()
 
 func _physics_process(delta: float) -> void:
 	

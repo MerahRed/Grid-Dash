@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkaq08n2v0dna"]
+[gd_scene load_steps=6 format=3 uid="uid://dkaq08n2v0dna"]
 
 [ext_resource type="Script" uid="uid://cjoypv5cs7iwe" path="res://scenes/Bosses/revolvers/revolver.gd" id="1_5alca"]
 [ext_resource type="Texture2D" uid="uid://eixgdb60xktb" path="res://images/revolver.png" id="2_d1jjj"]
+[ext_resource type="AudioStream" uid="uid://dhr4t3hk5u3y7" path="res://scenes/Bosses/revolvers/shot.mp3" id="3_mt5eu"]
+[ext_resource type="AudioStream" uid="uid://debal62v04aww" path="res://scenes/Bosses/revolvers/spin.wav" id="4_6v4tw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5alca"]
 radius = 4.663705
@@ -11,19 +13,19 @@ script = ExtResource("1_5alca")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(3.319885, 32.000008)
+position = Vector2(48.905075, 53.60479)
 rotation = 1.5707964
-scale = Vector2(0.19647355, 0.19647352)
+scale = Vector2(0.55049896, 0.57207096)
 texture = ExtResource("2_d1jjj")
 
 [node name="Warning" type="ColorRect" parent="Sprite"]
 z_index = -1
-offset_left = -229.03845
-offset_top = -101.79483
-offset_right = 1354.9615
-offset_bottom = -63.79483
+offset_left = -125.296616
+offset_top = -150.89539
+offset_right = 1458.7034
+offset_bottom = -112.895386
 rotation = -1.5789963
-scale = Vector2(4.392466, 4.0071616)
+scale = Vector2(1.6265754, 1.6600296)
 color = Color(1, 0, 0, 0.13725491)
 metadata/_edit_use_anchors_ = true
 
@@ -166,9 +168,10 @@ color = Color(1, 0, 0, 0.22745098)
 polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.094932556, 57.60479)
 
 [node name="bullet" type="Polygon2D" parent="."]
-position = Vector2(72.31987, -2.9999924)
+position = Vector2(135.90504, 3.604786)
 scale = Vector2(8.5, 4.0000014)
 polygon = PackedVector2Array(-0.82352924, -2, -1.0588236, -1.5, -1.0588236, 1.499999, -0.762383, 2, 0.7941065, 1.9999992, 1.0588236, 1.499999, 1.0588236, -1.5, 0.8235302, -2)
 
@@ -180,9 +183,20 @@ scale = Vector2(0.18181819, 0.22499993)
 shape = SubResource("CircleShape2D_5alca")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="Shot" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(103, 29)
+stream = ExtResource("3_mt5eu")
+volume_db = 3.0
+pitch_scale = 1.3
+
+[node name="Spin" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(103, 29)
+stream = ExtResource("4_6v4tw")
+volume_db = 5.943
 
 [connection signal="area_entered" from="bullet/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

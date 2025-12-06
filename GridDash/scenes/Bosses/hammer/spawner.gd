@@ -64,7 +64,19 @@ func spawn_obs():
 	add_child(obstacle)
 
 
-func _on_timer_timeout() -> void:
+func spawn_coin():
+	var coins = coin.instantiate()
+	coins.global_position.x = 416.0 + (64 * randi_range(0,2))
+	coins.global_position.y = 288.0 + (64 * randi_range(0,2))
+	get_parent().add_child(coins)
+
+
+func _on_coin_timer_timeout() -> void:
+	spawn_coin()
+	coin_timer.start()
+
+
+func _on_obs_timer_timeout() -> void:
 	spawn_obs()
 	timer.wait_time = obs_cooldown
 	timer.start()
@@ -77,15 +89,3 @@ func _on_timer_timeout() -> void:
 		obs_cooldown = 1
 	if current_speed > 12:
 		current_speed = 12
-
-
-func spawn_coin():
-	var coins = coin.instantiate()
-	coins.global_position.x = 416.0 + (64 * randi_range(0,2))
-	coins.global_position.y = 288.0 + (64 * randi_range(0,2))
-	get_parent().add_child(coins)
-
-
-func _on_coin_timer_timeout() -> void:
-	spawn_coin()
-	coin_timer.start()
