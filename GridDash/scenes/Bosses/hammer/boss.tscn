@@ -318,3 +318,5 @@ color = Color(1, 1, 1, 0.11764706)
 
 [connection signal="timeout" from="obs_Timer" to="spawner" method="_on_obs_timer_timeout"]
 [connection signal="timeout" from="coin_Timer" to="spawner" method="_on_coin_timer_timeout"]
+[connection signal="pressed" from="over screen/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="over screen/Try Again" to="." method="_on_try_again_pressed"]

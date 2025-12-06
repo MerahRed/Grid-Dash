@@ -53,6 +53,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "player":
 		animation_player.play("game over")
+		$"../../MusicDisk/4_Killstreak".stop()
 		$"../../spawner".queue_free()
 		area.get_parent().queue_free()
 		self.queue_free()
