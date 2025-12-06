@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyij47uyyhbfb"
+path="res://.godot/imported/21. Raw Surge.wav-8bcbf08fa5bd5a738608d8376e22da3c.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/21. Raw Surge.wav"
+dest_files=["res://.godot/imported/21. Raw Surge.wav-8bcbf08fa5bd5a738608d8376e22da3c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

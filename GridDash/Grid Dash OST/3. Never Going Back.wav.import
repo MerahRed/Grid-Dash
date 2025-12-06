@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dekh3l1kyeyo7"
+path="res://.godot/imported/3. Never Going Back.wav-39b8126b67d0c2378b54abc1937471ca.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/3. Never Going Back.wav"
+dest_files=["res://.godot/imported/3. Never Going Back.wav-39b8126b67d0c2378b54abc1937471ca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

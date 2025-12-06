@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg8scoq5tagdw"
+path="res://.godot/imported/22. Fairy in the woods.wav-1546ed030c00e23918051adf914d8ed9.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/22. Fairy in the woods.wav"
+dest_files=["res://.godot/imported/22. Fairy in the woods.wav-1546ed030c00e23918051adf914d8ed9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

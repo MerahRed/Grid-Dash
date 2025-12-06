@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3qt46tbaypd2"
+path="res://.godot/imported/15. Devil's Cathedral.wav-7da9e68411ca3f820d9d9736ab97bc16.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/15. Devil's Cathedral.wav"
+dest_files=["res://.godot/imported/15. Devil's Cathedral.wav-7da9e68411ca3f820d9d9736ab97bc16.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var game: Node2D = $".."
 
-const obs = preload("res://scenes/obs.tscn")
+@export var obs = preload("res://scenes/obs.tscn")
 @onready var timer: Timer = $"../obs_Timer"
 
 const coin = preload("res://scenes/coin.tscn")

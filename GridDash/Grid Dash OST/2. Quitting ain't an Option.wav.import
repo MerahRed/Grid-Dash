@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cthd26i6ck6i7"
+path="res://.godot/imported/2. Quitting ain't an Option.wav-c3c79a1f7f219f61c49e5e38b4ef86d0.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/2. Quitting ain't an Option.wav"
+dest_files=["res://.godot/imported/2. Quitting ain't an Option.wav-c3c79a1f7f219f61c49e5e38b4ef86d0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://clhn86q7n61p8"]
+[gd_scene load_steps=18 format=3 uid="uid://clhn86q7n61p8"]
 
+[ext_resource type="Texture2D" uid="uid://dyludn880arir" path="res://images/Grid.png" id="1_1l46r"]
 [ext_resource type="Script" uid="uid://drjyvur5ia5oq" path="res://scripts/shop.gd" id="1_lx5au"]
 [ext_resource type="Texture2D" uid="uid://b8tt2gtpbpu03" path="res://images/soul.png" id="1_xfvoa"]
+[ext_resource type="Texture2D" uid="uid://bpf0wbofr85sj" path="res://images/Cell.png" id="4_032fp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06t4h"]
 size = Vector2(128, 324)
@@ -294,88 +296,18 @@ Main Menu"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="grid" type="Node2D" parent="Node2D"]
-position = Vector2(-468.88895, -76.66667)
+[node name="Grid" type="Sprite2D" parent="Node2D"]
+z_index = -3
+position = Vector2(6.9999695, 278)
+scale = Vector2(0.3083333, 0.31111115)
+texture = ExtResource("1_1l46r")
 
-[node name="ColorRect" type="ColorRect" parent="Node2D/grid"]
-offset_left = 384.0
-offset_top = 256.0
-offset_right = 576.0
-offset_bottom = 448.0
-color = Color(1, 1, 1, 0.043137256)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="Node2D/grid"]
-offset_left = 392.0
-offset_top = 264.0
-offset_right = 440.0
-offset_bottom = 312.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect3" type="ColorRect" parent="Node2D/grid"]
-offset_left = 456.0
-offset_top = 264.0
-offset_right = 504.0
-offset_bottom = 312.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect4" type="ColorRect" parent="Node2D/grid"]
-offset_left = 520.0
-offset_top = 264.0
-offset_right = 568.0
-offset_bottom = 312.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect5" type="ColorRect" parent="Node2D/grid"]
-offset_left = 392.0
-offset_top = 328.0
-offset_right = 440.0
-offset_bottom = 376.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect6" type="ColorRect" parent="Node2D/grid"]
-offset_left = 456.0
-offset_top = 328.0
-offset_right = 504.0
-offset_bottom = 376.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect7" type="ColorRect" parent="Node2D/grid"]
-offset_left = 520.0
-offset_top = 328.0
-offset_right = 568.0
-offset_bottom = 376.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect8" type="ColorRect" parent="Node2D/grid"]
-offset_left = 392.0
-offset_top = 392.0
-offset_right = 440.0
-offset_bottom = 440.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect9" type="ColorRect" parent="Node2D/grid"]
-offset_left = 456.0
-offset_top = 392.0
-offset_right = 504.0
-offset_bottom = 440.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect10" type="ColorRect" parent="Node2D/grid"]
-offset_left = 520.0
-offset_top = 392.0
-offset_right = 568.0
-offset_bottom = 440.0
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
+[node name="ColorRect" type="ColorRect" parent="Node2D/Grid"]
+offset_left = -314.5946
+offset_top = -308.5714
+offset_right = 314.5946
+offset_bottom = 311.78564
+color = Color(1, 1, 1, 0.11764706)
 
 [node name="Shop" type="Node2D" parent="."]
 position = Vector2(1252, 266)
@@ -533,132 +465,78 @@ offset_bottom = 89.0
 theme_override_font_sizes/font_size = 50
 text = "$ "
 
-[node name="grid" type="Node2D" parent="."]
+[node name="Grids" type="Node2D" parent="."]
 
-[node name="grids" type="Node2D" parent="grid"]
+[node name="grids2" type="Node2D" parent="Grids"]
 
-[node name="grid2" type="Node2D" parent="grid"]
+[node name="Cell" type="Sprite2D" parent="Grids/grids2"]
+z_index = -2
+position = Vector2(371, 761.00006)
+scale = Vector2(0.072916694, 0.07222216)
+texture = ExtResource("4_032fp")
+
+[node name="Cell2" type="Sprite2D" parent="Grids/grids2"]
+z_index = -2
+position = Vector2(591, 762)
+scale = Vector2(0.072916694, 0.07222216)
+texture = ExtResource("4_032fp")
+
+[node name="Cell3" type="Sprite2D" parent="Grids/grids2"]
+z_index = -2
+position = Vector2(812.00006, 762.00006)
+scale = Vector2(0.072916694, 0.07222216)
+texture = ExtResource("4_032fp")
+
+[node name="Cell4" type="Sprite2D" parent="Grids/grids2"]
+z_index = -2
+position = Vector2(1031, 761.99994)
+scale = Vector2(0.072916694, 0.07222216)
+texture = ExtResource("4_032fp")
+
+[node name="Cell5" type="Sprite2D" parent="Grids/grids2"]
+z_index = -2
+position = Vector2(1252, 762)
+scale = Vector2(0.072916694, 0.07222216)
+texture = ExtResource("4_032fp")
+
+[node name="grid7" type="Node2D" parent="Grids"]
 position = Vector2(371, 762)
 scale = Vector2(0.9, 0.9)
 
-[node name="ColorRect" type="ColorRect" parent="grid/grid2"]
-offset_left = -38.888893
-offset_top = -36.66667
-offset_right = 1013.3334
-offset_bottom = 33.33339
-color = Color(1, 1, 1, 0.043137256)
-
-[node name="ColorRect2" type="ColorRect" parent="grid/grid2"]
+[node name="ColorRect2" type="ColorRect" parent="Grids/grid7"]
 z_index = -1
 offset_left = -38.888893
 offset_top = -280.00006
 offset_right = 37.777794
 offset_bottom = -36.666626
-color = Color(1, 1, 1, 0.043137256)
+color = Color(0, 0, 0, 0.18431373)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect3" type="ColorRect" parent="grid/grid2"]
+[node name="ColorRect3" type="ColorRect" parent="Grids/grid7"]
 z_index = -1
 offset_left = 452.22226
 offset_top = -280.0
 offset_right = 528.8889
 offset_bottom = -37.77777
-color = Color(1, 1, 1, 0.043137256)
+color = Color(0, 0, 0, 0.18431373)
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect4" type="ColorRect" parent="grid/grid2"]
+[node name="ColorRect4" type="ColorRect" parent="Grids/grid7"]
 z_index = -1
-offset_left = 934.4445
-offset_top = -278.8889
-offset_right = 1011.1112
-offset_bottom = -36.666656
-color = Color(1, 1, 1, 0.043137256)
-
-[node name="ColorRect6" type="ColorRect" parent="grid/grid2"]
-offset_left = -23.555553
-offset_top = -22.444445
-offset_right = 24.444447
-offset_bottom = 25.555555
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="grid3" type="Node2D" parent="grid"]
-position = Vector2(591, 762)
-scale = Vector2(0.9, 0.9)
-
-[node name="ColorRect6" type="ColorRect" parent="grid/grid3"]
-offset_left = -23.555553
-offset_top = -22.444445
-offset_right = 24.444447
-offset_bottom = 25.555555
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="ColorRect7" type="ColorRect" parent="grid/grid3"]
-offset_left = -38.00001
-offset_top = -37.777756
-offset_right = 38.888905
-offset_bottom = 40.88887
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="ColorRect9" type="ColorRect" parent="grid/grid3"]
-offset_left = -283.33334
-offset_top = -36.666645
-offset_right = -206.44443
-offset_bottom = 41.99998
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="ColorRect8" type="ColorRect" parent="grid/grid3"]
-offset_left = 206.66667
-offset_top = -37.777756
-offset_right = 283.5556
-offset_bottom = 40.88887
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="ColorRect11" type="ColorRect" parent="grid/grid3"]
-offset_left = 444.4445
-offset_top = -37.777756
-offset_right = 521.3334
-offset_bottom = 40.88887
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="ColorRect10" type="ColorRect" parent="grid/grid3"]
-offset_left = 690.0
-offset_top = -37.777756
-offset_right = 766.8889
-offset_bottom = 40.88887
-color = Color(0, 0, 0, 0.050980393)
-
-[node name="grid4" type="Node2D" parent="grid"]
-position = Vector2(811, 762)
-scale = Vector2(0.9, 0.9)
-
-[node name="ColorRect6" type="ColorRect" parent="grid/grid4"]
-offset_left = -23.555553
-offset_top = -22.444445
-offset_right = 24.444447
-offset_bottom = 25.555555
-color = Color(0, 0, 0, 0.050980393)
+offset_left = 942.2223
+offset_top = -280.0
+offset_right = 1018.8889
+offset_bottom = -37.77777
+color = Color(0, 0, 0, 0.18431373)
 metadata/_edit_use_anchors_ = true
 
-[node name="grid6" type="Node2D" parent="grid"]
-position = Vector2(1025, 762)
-scale = Vector2(0.9, 0.9)
-
-[node name="ColorRect6" type="ColorRect" parent="grid/grid6"]
-offset_left = -23.555553
-offset_top = -22.444445
-offset_right = 24.444447
-offset_bottom = 25.555555
-color = Color(0, 0, 0, 0.050980393)
-metadata/_edit_use_anchors_ = true
-
-[node name="grid5" type="Node2D" parent="grid"]
-position = Vector2(1246, 762)
-scale = Vector2(0.9, 0.9)
-
-[node name="ColorRect6" type="ColorRect" parent="grid/grid5"]
-offset_left = -23.555553
-offset_top = -22.444445
-offset_right = 24.444447
-offset_bottom = 25.555555
-color = Color(0, 0, 0, 0.050980393)
+[node name="ColorRect" type="ColorRect" parent="Grids/grid7"]
+offset_left = -38.888885
+offset_top = -36.666626
+offset_right = 528.8889
+offset_bottom = 33.333435
+scale = Vector2(1.6766473, 0.93507236)
+color = Color(0, 0, 0, 0.18431373)
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]

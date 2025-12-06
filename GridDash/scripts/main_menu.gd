@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+# 9eon life (lobby song)
+
 const SPEED := 220.0
 
 # Swipe settings

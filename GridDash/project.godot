@@ -24,6 +24,7 @@ window/handheld/orientation=1
 [file_customization]
 
 folder_colors={
+"res://Grid Dash OST/": "green",
 "res://images/": "yellow",
 "res://scenes/": "blue",
 "res://scripts/": "red"
@@ -41,3 +42,4 @@ press={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.15294118, 0.15294118, 0.15294118, 1)

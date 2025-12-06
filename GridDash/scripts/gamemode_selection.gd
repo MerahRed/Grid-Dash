@@ -15,6 +15,8 @@ var target_position := Vector2()
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
 
 var play = preload("res://scenes/game.tscn")
+var revolver = preload("res://scenes/Bosses/revolvers/boss.tscn")
+var hammer = preload("res://scenes/Bosses/hammer/boss.tscn")
 
 var now = 0
 
@@ -77,7 +79,7 @@ func handle_swipe() -> void:
 					target_position.y += SPEED
 				else:
 					target_position.y -= SPEED
-					if now == 1:
+					if now != 0:
 						animation_player.play("play")
 
 
@@ -86,7 +88,7 @@ func handle_input() -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		$AnimationPlayer.play("move")
 		target_position.y -= SPEED
-		if now == 1:
+		if now != 0:
 			animation_player.play("play")
 	elif Input.is_action_just_pressed("ui_down"):
 		$AnimationPlayer.play("move")
@@ -106,10 +108,17 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "shooter":
 		animation_player.play("select shooter")
 		now = 2
+	if area.name == "hammer":
+		animation_player.play("select hammer")
+		now = 3
 
 func change_scene():
 	if now == 1:
 		get_tree().change_scene_to_packed(play)
+	if now == 2:
+		get_tree().change_scene_to_packed(revolver)
+	if now == 3:
+		get_tree().change_scene_to_packed(hammer)
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
@@ -121,6 +130,10 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		if now == 2:
 			now = 0
 			animation_player.play("out shooter")
+	if area.name == "hammer":
+		if now == 3:
+			now = 0
+			animation_player.play("out hammer")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

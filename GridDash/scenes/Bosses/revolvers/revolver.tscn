@@ -1,0 +1,188 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkaq08n2v0dna"]
+
+[ext_resource type="Script" uid="uid://cjoypv5cs7iwe" path="res://scenes/Bosses/revolvers/revolver.gd" id="1_5alca"]
+[ext_resource type="Texture2D" uid="uid://eixgdb60xktb" path="res://images/revolver.png" id="2_d1jjj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5alca"]
+radius = 4.663705
+
+[node name="revolver" type="Node2D"]
+script = ExtResource("1_5alca")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.319885, 32.000008)
+rotation = 1.5707964
+scale = Vector2(0.19647355, 0.19647352)
+texture = ExtResource("2_d1jjj")
+
+[node name="Warning" type="ColorRect" parent="Sprite"]
+z_index = -1
+offset_left = -229.03845
+offset_top = -101.79483
+offset_right = 1354.9615
+offset_bottom = -63.79483
+rotation = -1.5789963
+scale = Vector2(4.392466, 4.0071616)
+color = Color(1, 0, 0, 0.13725491)
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(59.795002, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(126.08071, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(190.08072, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(254.08072, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(318.08072, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(382.08072, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(446.08072, -7.065075)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(507.795, -4.7793617)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(574.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(638.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(702.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(766.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(830.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(894.0807, -5.9222183)
+scale = Vector2(0.3192788, 0.38313454)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D15" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(955.795, -4.7793617)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D16" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1022.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D17" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1086.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D18" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1150.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D19" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1214.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1278.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D21" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1342.0807, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D22" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1403.7949, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Polygon2D23" type="Polygon2D" parent="Sprite/Warning"]
+position = Vector2(1467.7949, -5.9222145)
+scale = Vector2(0.31927884, 0.38313457)
+color = Color(1, 0, 0, 0.22745098)
+polygon = PackedVector2Array(104, 8, 104, 120, 160, 64)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="bullet" type="Polygon2D" parent="."]
+position = Vector2(72.31987, -2.9999924)
+scale = Vector2(8.5, 4.0000014)
+polygon = PackedVector2Array(-0.82352924, -2, -1.0588236, -1.5, -1.0588236, 1.499999, -0.762383, 2, 0.7941065, 1.9999992, 1.0588236, 1.499999, 1.0588236, -1.5, 0.8235302, -2)
+
+[node name="Area2D" type="Area2D" parent="bullet"]
+position = Vector2(-8.414774e-07, 1.9073486e-06)
+scale = Vector2(0.18181819, 0.22499993)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet/Area2D"]
+shape = SubResource("CircleShape2D_5alca")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="bullet/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

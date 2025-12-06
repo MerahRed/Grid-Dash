@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnblii1w8iwm"
+path="res://.godot/imported/14. Snooze it!!.wav-82a5af62a5d3b096cf6ba0f077a94896.sample"
+
+[deps]
+
+source_file="res://Grid Dash OST/14. Snooze it!!.wav"
+dest_files=["res://.godot/imported/14. Snooze it!!.wav-82a5af62a5d3b096cf6ba0f077a94896.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
